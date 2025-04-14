@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 需求清单样式 */
+        .requirement-section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 表格通用样式 */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* 特殊样式 */
+        .highlight {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        .progress {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+
+        <!-- 项目需求清单 -->
+        <div class="requirement-section">
+            <h2 class="section-title">物流管理系统核心需求清单</h2>
+            <p><strong>1.1 个人订单</strong><br>展示个人订单信息，接单后签订合同直接显示在待签收订单中，支持按订单起讫点和运输物品查询</p>
+            <p><strong>1.2 企业订单</strong><br>展示企业订单信息，支持学生自主选单定价投标，开标日根据公司资质得分与投标价计算中标结果</p>
+			<p><strong>1.3 中标企业客户</strong><br>展示企业订单信息，支持学生自主选单定价投标，开标日根据公司资质得分与投标价计算中标结果</p>
+			<p><strong>1.4 待签收订单</strong><br>管理待签收订单信息，根据要求送达时间智能生成运输调度方案</p>
+			<p><strong>1.5 已完成订单</strong><br>归档已完成订单数据，自动标记延期状态并提供历史追溯功能</p>
+			<p><strong>1.6 包车订单</strong><br>动态生成案例配置的包车订单，支持学生实时抢标操作</p>
+			<p><strong>1.7 订单监控</strong><br>可视化展示订单实时位置、运输状态、承运运力及完整历史轨迹</p>
+			<p><strong>1.8 单据监控</strong><br>自动生成并管理电子合同、货运单据和发票等全套运输凭证</p>
+            <!-- 其他需求项省略 -->
+        </div>
+
+ <!-- 个人订单 -->
+        <h2 class="section-title">个人订单</h2>
+        <table class="data-table">
+             <tr>
+                            <th>编号</th>
+                            <th>订单号</th>
+                            <th>商品名称</th>
+                            <th>数量</th>
+                            <th>单位</th>
+                            <th>单价</th>
+                            <th>金额</th>
+                            <th>创建时间</th>
+                            <th>起讫点</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="highlight">2023080812</td>
+                            <td>雪碧</td>
+                            <td>20</td>
+                            <td>件</td>
+                            <td>20</td>
+                            <td>400</td>
+                            <td>2023-08-12</td>
+                            <td>北京—石家庄</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="highlight">2023080815</td>
+                            <td>可乐</td>
+                            <td>15</td>
+                            <td>件</td>
+                            <td>20</td>
+                            <td>300</td>
+                            <td>2023-08-15</td>
+                            <td>北京—沧州</td>
+                        </tr>
+            <!-- 其他数据行省略 -->
+        </table>
+
+<!-- 企业订单 -->
+        <h2 class="section-title">企业订单</h2>
+        <table class="data-table">
+			 <tr>
+			    <th>编号</th>
+			    <th>订单号</th>
+			    <th>商品名称</th>
+			    <th>数量</th>
+			    <th>单位</th>
+			    <th>金额</th>
+			    <th>所属企业</th>
+			    <th>开标日期</th>
+			    <th>是否竞标</th>
+			</tr>
+			
+			<tr>
+			    <td>1</td>
+			    <td>2025041209</td>
+			    <td>百事可乐</td>
+			    <td>1,500</td>
+			    <td>件</td>
+			    <td>29,000</td>
+			    <td>百事集团</td>
+			    <td>2025-04-12</td>
+			    <td class="checkbox">□</td>
+			</tr>
+			<tr>
+			    <td>2</td>
+			    <td>2025041210</td>
+			    <td>可口可乐</td>
+			    <td>1,800</td>
+			    <td>件</td>
+			    <td>35,000</td>
+			    <td>可口可乐</td>
+			    <td>2025-04-12</td>
+			    <td class="checkbox">□</td>
+			</tr>
+			
+            <!-- 其他数据行省略 -->
+        </table>
+		
+        <!-- 中标企业客户 -->
+        <h2 class="section-title">中标企业客户</h2>
+        <table class="data-table">
+            <tr>
+                <th>编号</th><th>订单号</th><th>商品名称</th>
+                <th>数量</th><th>单位</th><th>金额</th>
+                <th>中标时间</th><th>运输进度</th><th>订单属性</th>
+            </tr>
+            <tr>
+                <td>1</td><td>2022080612</td><td>雪碧</td>
+                <td>2,000</td><td>件</td><td>38,000</td>
+                <td>2022-08-06</td><td class="progress">50%</td><td>企业订单</td>
+            </tr>
+            <!-- 其他数据行省略 -->
+        </table>
+
+<!-- 待签收订单 -->
+        <h2 class="section-title">待签收订单 </h2>
+        <table class="data-table">
+            <tr>
+                <th>编号</th>
+                <th>订单号</th>
+                <th>创建时间</th>
+                <th>商品名称</th>
+                <th>数量</th>
+                <th>单位</th>
+                <th>起讫点</th>
+            </tr>
+			
+			 <tr>
+			    <td>1</td>
+			    <td>16351108</td>
+			    <td>2022-04-14</td>
+			    <td>可乐</td>
+			    <td>10</td>
+			    <td>件</td>
+			    <td>北京—上海</td>
+			</tr>
+			<tr>
+			    <td>2</td>
+			    <td>16351109</td>
+			    <td>2022-04-15</td>
+			    <td>雪碧</td>
+			    <td>15</td>
+			    <td>件</td>
+			    <td>北京—沈阳</td>
+			</tr>
+            <!-- 其他数据行省略 -->
+        </table>
+
+  <!-- 已完成订单 -->
+        <h2 class="section-title">已完成订单</h2>
+        <table class="data-table">
+			<tr>
+			    <th>编号</th>
+			    <th>订单号</th>
+			    <th>商品名称</th>
+			    <th>数量</th>
+			    <th>单位</th>
+			    <th>起讫点</th>
+			    <th>完成时间</th>
+			    <th>规定时间</th>
+			    <th>是否延期</th>
+			</tr>
+			<tr>
+			    <td>1</td>
+			    <td>16351102</td>
+			    <td>可乐</td>
+			    <td>20</td>
+			    <td>件</td>
+			    <td>北京—上海</td>
+			    <td>2022-04-09</td>
+			    <td>2022-04-09</td>
+			    <td>否</td>
+			</tr>
+			<tr>
+			    <td>2</td>
+			    <td>16351103</td>
+			    <td>雪碧</td>
+			    <td>12</td>
+			    <td>件</td>
+			    <td>北京—沈阳</td>
+			    <td>2022-04-05</td>
+			    <td>2022-04-04</td>
+			    <td>否</td>
+			</tr>			
+            <!-- 其他数据行省略 -->
+        </table>
+
+
+        <!-- 包车订单 -->
+        <h2 class="section-title">包车订单</h2>
+        <table class="data-table">
+            <tr>
+                <th>编号</th><th>订单号</th><th>商品名称</th>
+                <th>数量</th><th>单位</th><th>起讫点</th><th>约定送达时间</th>
+            </tr>
+            <tr>
+                <td>1</td><td>16351114</td><td>啤酒</td>
+                <td>2000</td><td>件</td><td>北京—成都</td><td>2022-04-22</td>
+            </tr>
+            <!-- 其他数据行省略 -->
+        </table>
+
+        <!-- 订单监控 -->
+        <h2 class="section-title">订单监控</h2>
+        <table class="data-table">
+			<tr>
+			    <th>编号</th>
+			    <th>订单号</th>
+			    <th>创建时间</th>
+			    <th>商品名称</th>
+			    <th>起讫点</th>
+			    <th>订单位置</th>
+			    <th>订单状态</th>
+			    <th>承运运力</th>
+			    <th>历史记录</th>
+			</tr>
+			<tr>
+			    <td>1</td>
+			    <td>16351108</td>
+			    <td>2022-04-14</td>
+			    <td>可乐</td>
+			    <td>北京—上海</td>
+			    <td>北纬38°14′29″东经117°15′12″</td>
+			    <td>运输中</td>
+			    <td>20吨/天</td>
+			    <td><a href="#">点击查看详情</a></td> <!-- 超链接样式 -->
+			</tr>
+			<tr>
+			    <td>2</td>
+			    <td>16351109</td>
+			    <td>2022-04-15</td>
+			    <td>雪碧</td>
+			    <td>北京—沈阳</td>
+			    <td>北纬32°14′39″东经115°16′12″</td>
+			    <td>运输中</td>
+			    <td>20吨/天</td>
+			    <td><a href="#">点击查看详情</a></td>
+			</tr>
+            <!-- 其他数据行省略 -->
+        </table>
+
+<!-- 订单合同 -->
+        <h2 class="section-title">订单合同</h2>
+        <div style="margin: 15px 0">
+            <div>采购方：<span class="highlight">唐久便利店上海NO.3店</span></div>
+            <div>合同编号：<span class="highlight">20220414</span></div>
+        </div>
+        <table class="data-table">
+            <tr>
+                <th>编号</th><th>订单号</th><th>创建时间</th>
+                <th>商品名称</th><th>数量</th><th>单位</th>
+                <th>单价</th><th>总价</th><th>起讫点</th>
+            </tr>
+            <tr>
+                <td>1</td><td>16351108</td><td>2022-04-14</td>
+                <td>可乐</td><td>10</td><td>件</td>
+                <td>20</td><td class="amount">200</td>
+                <td>北京—上海</td>
+            </tr>
+        </table>
+        <div style="margin-top:15px; text-align: right">
+            <div>合计 人民币：<span class="amount">200元</span></div>
+            <div>大写：<span class="highlight">贰佰元整</span></div>
+        </div>
+        <hr>
+
+        <!-- 货运单 -->
+        <h1 class="section-title">货运单</h1>
+        <table class="data-table">
+            <tr>
+                <th>编号</th><th>订单号</th><th>创建时间</th>
+                <th>商品名称</th><th>数量</th><th>单位</th>
+                <th>起讫点</th><th>运输方式</th><th>运单号</th>
+            </tr>
+            <tr>
+                <td>1</td><td>16351108</td><td>2022-04-14</td>
+                <td>可乐</td><td>10</td><td>件</td>
+                <td>北京—上海</td><td>陆运</td>
+                <td class="highlight">608053672</td>
+            </tr>
+        </table>
+        
+        <table class="data-table">
+            <tr>
+                <th>起点</th><td class="highlight">北京大兴仓库</td>
+                <th>目的地</th><td class="highlight">唐久便利店上海NO.3店</td>
+                <th>负责人</th><td class="highlight">李丽</td>
+            </tr>
+        </table>
+        <div style="margin-top:15px">
+            制单员：<span class="highlight">张三</span> 
+            复核：<span class="highlight">王刚</span>
+        </div>
+        <hr>
+
+        <!-- 电子发票 -->
+        <h1 class="section-title">电子发票（普通发票）</h1>
+        <table class="data-table">
+            <tr>
+                <th style="width:25%">购买方信息</th>
+                <td>
+                    <div>名称：<span class="highlight">唐久便利店上海NO.3店</span></div>
+                    <div>纳税人识别号：XXXXXXXXXXXXXX</div>
+                </td>
+                <th style="width:25%">销售方信息</th>
+                <td>
+                    <div>名称：<span class="highlight">北京大兴食品有限公司</span></div>
+                    <div>纳税人识别号：XXXXXXXXXXXXXX</div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="data-table">
+            <tr>
+                <th>项目名称</th><th>规格型号</th><th>单位</th>
+                <th>数量</th><th>金额</th><th>税率</th><th>税额</th>
+            </tr>
+            <tr>
+                <td>食品类*可乐</td><td>500ml*12</td><td>件</td>
+                <td>10</td><td class="amount">¥198.02</td>
+                <td>1%</td><td class="amount">¥1.98</td>
+            </tr>
+        </table>
+
+        <div style="margin-top:20px; text-align: right">
+            <div>合计：<span class="amount">¥198.02</span> <span class="amount">¥1.98</span></div>
+            <div>价税合计（大写）：<span class="highlight">贰佰元整</span></div>
+            <div>（小写）：<span class="amount">¥200</span></div>
+            <div style="margin-top:15px">备注：开票人：<span class="highlight">张三</span></div>
+        </div>
+
+
+
+       <!-- 其他模块省略 -->
+
+    </div>
+</body>
+</html>
