@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: center;
+        }
+        h1.section-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .highlight {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        .amount {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- 订单合同 -->
+        <h1 class="section-title">订单合同</h1>
+        <div style="margin: 15px 0">
+            <div>采购方：<span class="highlight">唐久便利店上海NO.3店</span></div>
+            <div>合同编号：<span class="highlight">20220414</span></div>
+        </div>
+        <table>
+            <tr>
+                <th>编号</th><th>订单号</th><th>创建时间</th>
+                <th>商品名称</th><th>数量</th><th>单位</th>
+                <th>单价</th><th>总价</th><th>起讫点</th>
+            </tr>
+            <tr>
+                <td>1</td><td>16351108</td><td>2022-04-14</td>
+                <td>可乐</td><td>10</td><td>件</td>
+                <td>20</td><td class="amount">200</td>
+                <td>北京—上海</td>
+            </tr>
+        </table>
+        <div style="margin-top:15px; text-align: right">
+            <div>合计 人民币：<span class="amount">200元</span></div>
+            <div>大写：<span class="highlight">贰佰元整</span></div>
+        </div>
+        <hr>
+
+        <!-- 货运单 -->
+        <h1 class="section-title">货运单</h1>
+        <table>
+            <tr>
+                <th>编号</th><th>订单号</th><th>创建时间</th>
+                <th>商品名称</th><th>数量</th><th>单位</th>
+                <th>起讫点</th><th>运输方式</th><th>运单号</th>
+            </tr>
+            <tr>
+                <td>1</td><td>16351108</td><td>2022-04-14</td>
+                <td>可乐</td><td>10</td><td>件</td>
+                <td>北京—上海</td><td>陆运</td>
+                <td class="highlight">608053672</td>
+            </tr>
+        </table>
+        
+        <table style="margin-top:20px">
+            <tr>
+                <th>起点</th><td class="highlight">北京大兴仓库</td>
+                <th>目的地</th><td class="highlight">唐久便利店上海NO.3店</td>
+                <th>负责人</th><td class="highlight">李丽</td>
+            </tr>
+        </table>
+        <div style="margin-top:15px">
+            制单员：<span class="highlight">张三</span> 
+            复核：<span class="highlight">王刚</span>
+        </div>
+        <hr>
+
+        <!-- 电子发票 -->
+        <h1 class="section-title">电子发票（普通发票）</h1>
+        <table>
+            <tr>
+                <th style="width:25%">购买方信息</th>
+                <td>
+                    <div>名称：<span class="highlight">唐久便利店上海NO.3店</span></div>
+                    <div>纳税人识别号：XXXXXXXXXXXXXX</div>
+                </td>
+                <th style="width:25%">销售方信息</th>
+                <td>
+                    <div>名称：<span class="highlight">北京大兴食品有限公司</span></div>
+                    <div>纳税人识别号：XXXXXXXXXXXXXX</div>
+                </td>
+            </tr>
+        </table>
+
+        <table style="margin-top:20px">
+            <tr>
+                <th>项目名称</th><th>规格型号</th><th>单位</th>
+                <th>数量</th><th>金额</th><th>税率</th><th>税额</th>
+            </tr>
+            <tr>
+                <td>食品类*可乐</td><td>500ml*12</td><td>件</td>
+                <td>10</td><td class="amount">¥198.02</td>
+                <td>1%</td><td class="amount">¥1.98</td>
+            </tr>
+        </table>
+
+        <div style="margin-top:20px; text-align: right">
+            <div>合计：<span class="amount">¥198.02</span> <span class="amount">¥1.98</span></div>
+            <div>价税合计（大写）：<span class="highlight">贰佰元整</span></div>
+            <div>（小写）：<span class="amount">¥200</span></div>
+            <div style="margin-top:15px">备注：开票人：<span class="highlight">张三</span></div>
+        </div>
+    </div>
+</body>
+</html>
