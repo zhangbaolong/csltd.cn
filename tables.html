@@ -3,41 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <style>
+        /* 新增页面容器样式 */
+        .container {
+            max-width: 800px;          /* 限制内容最大宽度 */
+            margin: 20px auto;         /* 上下边距20px，左右自动居中 */
+            padding: 20px;             /* 内边距 */
+            border: 2px solid #ccc;    /* 灰色边框 */
+            border-radius: 8px;        /* 圆角边框 */
+        }
+
         table {
-            width: 100%;
+            width: 90%;                /* 表格宽度调整为90%容器宽度 */
+            margin: 0 auto;           /* 表格居中 */
             border-collapse: collapse;
         }
+
         th, td {
             border: 1px solid black;
-            padding: 8px;
-            text-align: center; /* 修改为居中对齐 */
+            padding: 12px;           /* 增加单元格内边距 */
+            text-align: center;
         }
+
         caption {
             font-size: 1.2em;
             font-weight: bold;
-            margin-bottom: 10px;
-            text-align: center; /* 标题也居中 */
+            margin: 15px 0;           /* 调整标题间距 */
+            text-align: center;
         }
+
         .blue-text {
             color: blue;
         }
     </style>
 </head>
 <body>
-    <table>
-        <caption>车辆装卸单</caption>
-        <tr>
-            <th>商品名称</th>
-            <th>商品数量</th>
-            <th>运输目的地</th>
-            <th>装车方式</th>
-        </tr>
-        <tr>
-            <td class="blue-text">饮料</td>
-            <td class="blue-text">1000箱</td>
-            <td class="blue-text">沈阳</td>
-            <td class="blue-text">叉车</td>
-        </tr>
-    </table>
+    <div class="container">  <!-- 新增页面容器 -->
+        <table>
+            <caption>车辆装卸单</caption>
+            <tr>
+                <th>商品名称</th>
+                <th>商品数量</th>
+                <th>运输目的地</th>
+                <th>装车方式</th>
+            </tr>
+            <tr>
+                <td class="blue-text">饮料</td>
+                <td class="blue-text">1000箱</td>
+                <td class="blue-text">沈阳</td>
+                <td class="blue-text">叉车</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
