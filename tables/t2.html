@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 需求清单样式 */
+        .requirement-section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 表格通用样式 */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* 特殊样式 */
+        .highlight {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        .progress {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+
+<!-- 待签收订单 -->
+        <h2 class="section-title">待签收订单 </h2>
+        <table class="data-table">
+            <tr>
+                <th>编号</th>
+                <th>订单号</th>
+                <th>创建时间</th>
+                <th>商品名称</th>
+                <th>数量</th>
+                <th>单位</th>
+                <th>起讫点</th>
+            </tr>
+			
+			 <tr>
+			    <td>1</td>
+			    <td>16351108</td>
+			    <td>2022-04-14</td>
+			    <td>可乐</td>
+			    <td>10</td>
+			    <td>件</td>
+			    <td>北京—上海</td>
+			</tr>
+			<tr>
+			    <td>2</td>
+			    <td>16351109</td>
+			    <td>2022-04-15</td>
+			    <td>雪碧</td>
+			    <td>15</td>
+			    <td>件</td>
+			    <td>北京—沈阳</td>
+			</tr>
+            <!-- 其他数据行省略 -->
+        </table>
+
+  
+
+       <!-- 其他模块省略 -->
+
+    </div>
+</body>
+</html>
